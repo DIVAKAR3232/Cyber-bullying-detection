@@ -75,7 +75,7 @@ def load_lottieurl(url):
     except:
         return None
 
-# Custom CSS
+# Custom CSS - White Background with Modern Design
 st.markdown("""
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
@@ -85,17 +85,16 @@ st.markdown("""
     }
     
     .stApp {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        background: #ffffff;
     }
     
     /* Header */
     .app-header {
-        background: rgba(255, 255, 255, 0.98);
-        backdrop-filter: blur(20px);
-        padding: 20px 40px;
-        border-radius: 0 0 30px 30px;
-        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
-        margin: -60px -60px 30px -60px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        padding: 25px 40px;
+        border-radius: 0;
+        box-shadow: 0 4px 20px rgba(102, 126, 234, 0.15);
+        margin: -60px -60px 40px -60px;
         position: sticky;
         top: 0;
         z-index: 1000;
@@ -118,48 +117,18 @@ st.markdown("""
     .logo-text {
         font-size: 1.8em;
         font-weight: 800;
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-    }
-    
-    .nav-menu {
-        display: flex;
-        gap: 10px;
-    }
-    
-    .nav-button {
-        background: transparent;
-        border: 2px solid transparent;
-        padding: 10px 24px;
-        border-radius: 12px;
-        font-weight: 600;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        color: #475569;
-    }
-    
-    .nav-button:hover {
-        background: rgba(102, 126, 234, 0.1);
-        border-color: #667eea;
-        color: #667eea;
-    }
-    
-    .nav-button.active {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         color: white;
-        box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        text-shadow: 0 2px 10px rgba(0,0,0,0.1);
     }
     
     /* Main Content Container */
     .main-container {
-        background: rgba(255, 255, 255, 0.98);
-        backdrop-filter: blur(20px);
-        border-radius: 30px;
-        padding: 50px;
-        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+        background: #ffffff;
+        border-radius: 20px;
+        padding: 40px;
         margin: 20px 0;
         animation: fadeInUp 0.6s ease-out;
+        border: 1px solid #e5e7eb;
     }
     
     @keyframes fadeInUp {
@@ -177,10 +146,13 @@ st.markdown("""
     .hero-section {
         text-align: center;
         padding: 60px 0;
+        background: linear-gradient(135deg, #f8f9ff 0%, #fff5f7 100%);
+        border-radius: 20px;
+        margin-bottom: 40px;
     }
     
     .hero-title {
-        font-size: 4em;
+        font-size: 3.5em;
         font-weight: 800;
         background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         -webkit-background-clip: text;
@@ -195,9 +167,10 @@ st.markdown("""
     }
     
     .hero-subtitle {
-        font-size: 1.4em;
+        font-size: 1.3em;
         color: #64748b;
         margin-bottom: 40px;
+        font-weight: 500;
     }
     
     /* Feature Cards */
@@ -209,12 +182,12 @@ st.markdown("""
     }
     
     .feature-card {
-        background: white;
-        border-radius: 20px;
+        background: #ffffff;
+        border-radius: 16px;
         padding: 35px;
-        box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.06);
         transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        border: 2px solid transparent;
+        border: 2px solid #f3f4f6;
         position: relative;
         overflow: hidden;
     }
@@ -225,7 +198,7 @@ st.markdown("""
         top: 0;
         left: 0;
         width: 100%;
-        height: 5px;
+        height: 4px;
         background: linear-gradient(90deg, #667eea, #764ba2);
         transform: scaleX(0);
         transition: transform 0.3s ease;
@@ -236,8 +209,8 @@ st.markdown("""
     }
     
     .feature-card:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 15px 45px rgba(102, 126, 234, 0.2);
+        transform: translateY(-8px);
+        box-shadow: 0 12px 35px rgba(102, 126, 234, 0.15);
         border-color: #667eea;
     }
     
@@ -255,7 +228,8 @@ st.markdown("""
     
     .feature-desc {
         color: #64748b;
-        line-height: 1.6;
+        line-height: 1.7;
+        font-size: 0.95em;
     }
     
     /* Stats Cards */
@@ -269,15 +243,15 @@ st.markdown("""
     .stat-card {
         background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         color: white;
-        padding: 30px;
-        border-radius: 20px;
+        padding: 35px;
+        border-radius: 16px;
         text-align: center;
-        box-shadow: 0 8px 30px rgba(102, 126, 234, 0.3);
+        box-shadow: 0 4px 20px rgba(102, 126, 234, 0.25);
         transition: transform 0.3s ease;
     }
     
     .stat-card:hover {
-        transform: scale(1.05);
+        transform: translateY(-5px) scale(1.02);
     }
     
     .stat-number {
@@ -288,7 +262,8 @@ st.markdown("""
     
     .stat-label {
         font-size: 1em;
-        opacity: 0.9;
+        opacity: 0.95;
+        font-weight: 500;
     }
     
     /* Button Styles */
@@ -296,40 +271,43 @@ st.markdown("""
         background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         color: white;
         border: none;
-        border-radius: 16px;
-        padding: 18px 40px;
-        font-size: 18px;
+        border-radius: 12px;
+        padding: 16px 36px;
+        font-size: 16px;
         font-weight: 600;
-        box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+        box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
         transition: all 0.3s ease;
         width: 100%;
     }
     
     .stButton>button:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 12px 35px rgba(102, 126, 234, 0.5);
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
     }
     
     /* Text Area */
     .stTextArea textarea {
-        border-radius: 16px;
-        border: 2px solid #e2e8f0;
-        font-size: 16px;
-        padding: 20px;
+        border-radius: 12px;
+        border: 2px solid #e5e7eb;
+        font-size: 15px;
+        padding: 18px;
         transition: all 0.3s ease;
+        background: #fafafa;
     }
     
     .stTextArea textarea:focus {
         border-color: #667eea;
-        box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
+        box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        background: white;
     }
     
     /* Alert Boxes */
     .alert-box {
-        padding: 25px;
-        border-radius: 16px;
+        padding: 20px 25px;
+        border-radius: 12px;
         margin: 20px 0;
         animation: slideIn 0.5s ease-out;
+        border: 1px solid;
     }
     
     @keyframes slideIn {
@@ -344,51 +322,53 @@ st.markdown("""
     }
     
     .alert-success {
-        background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);
-        color: #065f46;
-        border-left: 6px solid #10b981;
+        background: #f0fdf4;
+        color: #166534;
+        border-color: #86efac;
+        border-left: 4px solid #10b981;
     }
     
     .alert-danger {
-        background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%);
+        background: #fef2f2;
         color: #991b1b;
-        border-left: 6px solid #ef4444;
+        border-color: #fca5a5;
+        border-left: 4px solid #ef4444;
     }
     
     .alert-info {
-        background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
-        color: #1e3a8a;
-        border-left: 6px solid #3b82f6;
+        background: #eff6ff;
+        color: #1e40af;
+        border-color: #93c5fd;
+        border-left: 4px solid #3b82f6;
     }
     
     /* Metric Cards */
     .metric-card {
-        background: white;
-        border-radius: 20px;
-        padding: 30px;
-        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+        background: #ffffff;
+        border-radius: 16px;
+        padding: 28px;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
         transition: all 0.3s ease;
+        border: 1px solid #f3f4f6;
     }
     
     .metric-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 35px rgba(0, 0, 0, 0.12);
+        transform: translateY(-4px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
     }
     
     /* Sidebar */
     [data-testid="stSidebar"] {
-        background: rgba(255, 255, 255, 0.95);
-        backdrop-filter: blur(20px);
+        background: #fafafa;
     }
     
     /* Footer */
     .app-footer {
-        background: rgba(255, 255, 255, 0.98);
-        backdrop-filter: blur(20px);
-        padding: 40px;
-        border-radius: 30px 30px 0 0;
-        margin: 50px -60px -60px -60px;
-        box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.1);
+        background: #f8fafc;
+        padding: 50px 40px;
+        border-radius: 0;
+        margin: 60px -60px -60px -60px;
+        border-top: 1px solid #e5e7eb;
     }
     
     .footer-content {
@@ -401,7 +381,7 @@ st.markdown("""
         display: flex;
         justify-content: center;
         gap: 30px;
-        margin: 20px 0;
+        margin: 25px 0;
         flex-wrap: wrap;
     }
     
@@ -410,6 +390,7 @@ st.markdown("""
         text-decoration: none;
         font-weight: 500;
         transition: color 0.3s ease;
+        cursor: pointer;
     }
     
     .footer-link:hover {
@@ -419,16 +400,17 @@ st.markdown("""
     /* Severity Gauge */
     .severity-gauge {
         position: relative;
-        height: 24px;
-        background: #e5e7eb;
-        border-radius: 12px;
+        height: 28px;
+        background: #f3f4f6;
+        border-radius: 14px;
         overflow: hidden;
         margin: 20px 0;
+        border: 1px solid #e5e7eb;
     }
     
     .severity-fill {
         height: 100%;
-        border-radius: 12px;
+        border-radius: 14px;
         transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);
         position: relative;
     }
@@ -440,7 +422,7 @@ st.markdown("""
         left: 0;
         bottom: 0;
         right: 0;
-        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
         animation: shine 2s infinite;
     }
     
@@ -449,15 +431,22 @@ st.markdown("""
         100% { transform: translateX(100%); }
     }
     
-    /* Data Table */
-    .dataframe {
-        border-radius: 12px;
-        overflow: hidden;
-    }
-    
     /* Progress Bar */
     .stProgress > div > div {
         background: linear-gradient(90deg, #667eea, #764ba2);
+    }
+    
+    /* Section Headers */
+    h1, h2, h3, h4 {
+        color: #1e293b;
+    }
+    
+    /* Dividers */
+    hr {
+        border: none;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, #e5e7eb, transparent);
+        margin: 30px 0;
     }
 </style>
 """, unsafe_allow_html=True)
@@ -498,8 +487,8 @@ def render_footer():
     st.markdown("""
     <div class="app-footer">
         <div class="footer-content">
-            <h3 style='color: #1e293b; margin-bottom: 20px;'>🛡️ CyberGuard AI</h3>
-            <p style='color: #64748b; margin-bottom: 20px;'>
+            <h3 style='color: #1e293b; margin-bottom: 20px; font-size: 1.5em;'>🛡️ CyberGuard AI</h3>
+            <p style='color: #64748b; margin-bottom: 25px; font-size: 1.05em;'>
                 Advanced AI-Powered Cyberbullying Detection System<br>
                 Protecting Digital Communities Worldwide
             </p>
@@ -510,7 +499,7 @@ def render_footer():
                 <span class="footer-link">API Access</span>
                 <span class="footer-link">Support</span>
             </div>
-            <p style='color: #94a3b8; font-size: 0.9em; margin-top: 20px;'>
+            <p style='color: #94a3b8; font-size: 0.9em; margin-top: 25px;'>
                 © 2024 CyberGuard Systems. All rights reserved.
             </p>
         </div>
@@ -544,7 +533,7 @@ def home_page():
         st.markdown("<br>", unsafe_allow_html=True)
     
     # Features Grid
-    st.markdown("<h2 style='text-align: center; color: #1e293b; margin: 60px 0 40px 0;'>Why Choose CyberGuard AI?</h2>", unsafe_allow_html=True)
+    st.markdown("<h2 style='text-align: center; color: #1e293b; margin: 60px 0 40px 0; font-weight: 700;'>Why Choose CyberGuard AI?</h2>", unsafe_allow_html=True)
     
     col1, col2, col3 = st.columns(3)
     
@@ -612,7 +601,7 @@ def home_page():
         """, unsafe_allow_html=True)
     
     # Stats Section
-    st.markdown("<h2 style='text-align: center; color: #1e293b; margin: 60px 0 40px 0;'>System Performance</h2>", unsafe_allow_html=True)
+    st.markdown("<h2 style='text-align: center; color: #1e293b; margin: 60px 0 40px 0; font-weight: 700;'>System Performance</h2>", unsafe_allow_html=True)
     
     col1, col2, col3, col4 = st.columns(4)
     
@@ -844,10 +833,10 @@ def analyze_page():
                                 st.metric("Avg Severity", f"{avg_severity:.1f}")
                             
                             # Download results
-                            csv = results_df.to_csv(index=False)
+                            csv_data = results_df.to_csv(index=False)
                             st.download_button(
                                 "📥 Download Results",
-                                csv,
+                                csv_data,
                                 "batch_analysis_results.csv",
                                 "text/csv",
                                 use_container_width=True
@@ -1172,33 +1161,32 @@ def reports_page():
             col1, col2, col3 = st.columns(3)
             
             with col1:
-                csv = filtered_df.to_csv(index=False)
+                csv_export = filtered_df.to_csv(index=False)
                 st.download_button(
-                    "📄 Download CSV",
-                    csv,
-                    "flagged_messages_report.csv",
+                    "📥 Download CSV",
+                    csv_export,
+                    "flagged_messages_export.csv",
                     "text/csv",
                     use_container_width=True
                 )
-            
             with col2:
                 # Generate summary report
                 summary = f"""
-                CYBERGUARD AI - SUMMARY REPORT
-                Generated: {datetime.now().strftime('%Y-%m-%d %H:%M')}
-                
-                OVERVIEW:
-                - Total Messages: {len(filtered_df)}
-                - Average Severity: {filtered_df['Severity'].mean():.1f}
-                - Critical Cases: {len(filtered_df[filtered_df['Severity'] >= 80])}
-                
-                BY TYPE:
-                {filtered_df['Type'].value_counts().to_string()}
-                
-                BY SEVERITY:
-                - Low: {len(filtered_df[filtered_df['Severity'] < 40])}
-                - Medium: {len(filtered_df[(filtered_df['Severity'] >= 40) & (filtered_df['Severity'] < 80)])}
-                - High: {len(filtered_df[filtered_df['Severity'] >= 80])}
+CYBERGUARD AI - SUMMARY REPORT
+Generated: {datetime.now().strftime('%Y-%m-%d %H:%M')}
+
+OVERVIEW:
+- Total Messages: {len(filtered_df)}
+- Average Severity: {filtered_df['Severity'].mean():.1f}
+- Critical Cases: {len(filtered_df[filtered_df['Severity'] >= 80])}
+
+BY TYPE:
+{filtered_df['Type'].value_counts().to_string()}
+
+BY SEVERITY:
+- Low: {len(filtered_df[filtered_df['Severity'] < 40])}
+- Medium: {len(filtered_df[(filtered_df['Severity'] >= 40) & (filtered_df['Severity'] < 80)])}
+- High: {len(filtered_df[filtered_df['Severity'] >= 80])}
                 """
                 
                 st.download_button(
